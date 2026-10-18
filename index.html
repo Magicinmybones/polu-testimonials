@@ -416,6 +416,50 @@ img{display:block}
   .track{scroll-behavior:auto}
   .bubble,.cta,.pager-btn{transition:none}
 }
+
+/* One opening composition: type establishes the message, stories follow,
+   then the claim action settles among the still portrait collage. The
+   backwards fill hides delayed groups without retaining animated styles. */
+@media (prefers-reduced-motion:no-preference){
+  .title .l1{
+    animation:entry-line .78s cubic-bezier(.22,1,.36,1) .08s 1 backwards;
+  }
+  .title .accent{
+    animation:entry-line .82s cubic-bezier(.22,1,.36,1) .22s 1 backwards;
+  }
+  .lede{
+    animation:entry-copy .58s cubic-bezier(.22,1,.36,1) .55s 1 backwards;
+  }
+  .card:nth-child(1){animation:entry-story .7s cubic-bezier(.22,1,.36,1) .79s 1 backwards}
+  .card:nth-child(2){animation:entry-story .7s cubic-bezier(.22,1,.36,1) .88s 1 backwards}
+  .card:nth-child(3){animation:entry-story .7s cubic-bezier(.22,1,.36,1) .97s 1 backwards}
+  .pager{
+    animation:entry-pager .46s cubic-bezier(.22,1,.36,1) 1.24s 1 backwards;
+  }
+  .cta{
+    animation:entry-action .62s cubic-bezier(.22,1,.36,1) 1.34s 1 backwards;
+  }
+}
+@keyframes entry-line{
+  from{clip-path:inset(0 0 100% 0);transform:translateY(10px)}
+  to{clip-path:inset(0 0 0 0);transform:none}
+}
+@keyframes entry-copy{
+  from{opacity:0;transform:translateY(5px)}
+  to{opacity:1;transform:none}
+}
+@keyframes entry-story{
+  from{opacity:0;transform:translateY(11px)}
+  to{opacity:1;transform:none}
+}
+@keyframes entry-pager{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes entry-action{
+  from{opacity:0;transform:scale(.96)}
+  to{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
